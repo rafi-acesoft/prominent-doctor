@@ -28,7 +28,7 @@ const EditPatient = () => {
 
   const goBack = () => {
     if (history.length > 1) {
-      history.goBack();
+      history.goBack("/view-patients");
     }
   };
 
@@ -43,7 +43,7 @@ const EditPatient = () => {
             >
               <AiOutlineClose size={25} color={"#000"} />
             </button>
-            <div className="table-card-title">Edit Patient</div>
+            <div className="table-card-title">Edit Patients</div>
 
             <div className="surgeon-details-content-container">
               <Row className="pt-5">
