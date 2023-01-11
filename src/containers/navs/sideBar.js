@@ -20,7 +20,7 @@ const SideBar = ({ toggleSideBar, onToggleSideBar }) => {
   const [collapseState, setCollapseState] = useState(false);
 
   const currentPathName = location.pathname;
-
+  console.log(currentPathName)
   const onToggleCollapse = () => {
     if (toggleSideBar) {
       onToggleSideBar(false);
