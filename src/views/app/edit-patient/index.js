@@ -28,7 +28,7 @@ const EditPatient = () => {
 
   const goBack = () => {
     if (history.length > 1) {
-      history.goBack("/app/view-patients");
+      history.push("/app/view-patients");
     }
   };
 
