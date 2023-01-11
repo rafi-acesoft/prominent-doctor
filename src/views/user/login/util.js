@@ -21,7 +21,7 @@ const useLogin = () => {
       const user = { Email: email, Password: password };
       console.log(user);
       setCurrentUser(user);
-      history.push("/app");
+      history.push("/app/view-patients");
     }
   };
 
