@@ -1,5 +1,6 @@
 import { useCallback,  useState } from "react";
 import { useHistory } from "react-router";
+import { adminRoot } from "../../../constants/constants";
 import { setCurrentUser } from "../../../helpers/Utils";
 
 const useLogin = () => {
@@ -21,7 +22,7 @@ const useLogin = () => {
       const user = { Email: email, Password: password };
       console.log(user);
       setCurrentUser(user);
-      history.push("/app/view-patients");
+      history.push(`${adminRoot}/view-patients`);
     }
   };
 

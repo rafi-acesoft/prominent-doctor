@@ -11,6 +11,7 @@ import {
 } from "../../../constants/appData";
 import AppDateRangePicker from "../../../components/datePicker";
 import QuestionCard from "../../../components/questionCard";
+import { adminRoot } from "../../../constants/constants";
 
 const SurveyItem = ({ value }) => (
   <li className="detail-survey-name-container">
@@ -27,9 +28,7 @@ const EditPatient = () => {
   const history = useHistory();
 
   const goBack = () => {
-    if (history.length > 1) {
-      history.push("/app/view-patients");
-    }
+      history.push(`${adminRoot}/view-patients`);
   };
 
   return (
@@ -43,7 +42,7 @@ const EditPatient = () => {
             >
               <AiOutlineClose size={25} color={"#000"} />
             </button>
-            <div className="table-card-title">Edit Patients</div>
+            <div className="table-card-title">Edit Patient</div>
 
             <div className="surgeon-details-content-container">
               <Row className="pt-5">
