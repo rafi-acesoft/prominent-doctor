@@ -77,7 +77,7 @@ const AddPatient = () => {
                     placeholder="Password"
                   />
 
-                  <div className="add-patient-right-box pt-3 pb-3">
+                  {/* <div className="add-patient-right-box pt-3 pb-3">
                     <div className="card-sub-title pb-3 pt-3">
                       Set Notification Frequency
                     </div>
@@ -86,7 +86,7 @@ const AddPatient = () => {
                       data={ClientNotificationData}
                       placeholder="Select a Frequency"
                     />
-                  </div>
+                  </div> */}
 
                   {/* 
                   <div className="btn-container">
