@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import { withRouter } from "react-router-dom";
 import { Route, Switch, Redirect, useRouteMatch } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import AppLayout from "../../layout/AppLayout";
 
 const ViewSurgeonsPage = React.lazy(() => import("./view-surgeons/index"));
@@ -18,6 +20,20 @@ const ViewUnauthorized = React.lazy(() => import("../unauthorized"));
 
 const App = () => {
   let match = useRouteMatch();
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(location.pathname);
+
+  // useEffect(() => {
+  //   function handleLocationChange() {
+  //     setCurrentPath(location.pathname);
+  //   }
+
+  //   window.addEventListener('popstate', handleLocationChange);
+
+  //   return () => {
+  //     window.removeEventListener('popstate', handleLocationChange);
+  //   };
+  // }, [location.pathname]);
 
   return (
     <AppLayout>
@@ -50,7 +66,7 @@ const App = () => {
           />
 
           <Route
-            path={`${match.url}/view-report`}
+            path={`${match.url}/view-patient-report`}
             render={(props) => <ViewReportPage {...props} />}
           />
           <Route

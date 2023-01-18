@@ -32,7 +32,7 @@ const ViewSurgeons = () => {
     history.push(`${adminRoot}/edit-survey-details`);
 
   const goToEditPatientPage = () => history.push(`${adminRoot}/edit-patient`);
-  const goToReportPage = () => history.push(`${adminRoot}/view-report`);
+  const goToReportPage = () => history.push(`${adminRoot}/view-patient-report`);
 
   const goToAddSurgeonPage = () =>
     history.push(`${adminRoot}/add-surgeon-details`);

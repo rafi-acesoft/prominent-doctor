@@ -75,8 +75,9 @@ const SideBar = ({ toggleSideBar, onToggleSideBar }) => {
       </SidebarHeader>
       <Menu style={{ height: "100%" }}>
         {sidemenuData.map((item) => {
+          const slug= (location.pathname).split('/')
           const isActiveMenu =
-            currentPathName == `${adminRoot}/${item.to}` || false;
+          item.parentSlug?.includes(slug[2]) || currentPathName == `${adminRoot}/${item.to}` || false;
           return (
             <MenuItem
               icon={isActiveMenu ? item.activeIcon : item.icon}

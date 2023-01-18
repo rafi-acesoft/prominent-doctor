@@ -12,6 +12,7 @@ const sidemenuData = [
     label: "Patients",
     icon: <FaUserAlt size={18} color={iconColor} />,
     activeIcon: <FaUserAlt size={18} color={activeIconColor} />,
+    parentSlug: ["edit-patient", "view-patient-report"],
     to: `view-patients`,
   },
   {
