@@ -3,6 +3,7 @@ import { Col } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Card from "../../../components/card";
 import { AiOutlineClose } from "react-icons/ai";
+import { adminRoot } from "../../../constants";
 
 const QuestionCard = ({ count }) => {
   return (
@@ -23,7 +24,7 @@ const QuestionCard = ({ count }) => {
 const SurveyDetails = () => {
   const history = useHistory();
 
-  const goBack = () => history.goBack();
+  const goBack = () => history.push(`${adminRoot}/view-surveys`);
   return (
     <div className="container-data-table">
       <Card className="p-3 table-white-card">

@@ -34,6 +34,7 @@ const sidemenuData = [
     label: "Surveys",
     icon: <RiSurveyFill size={18} color={iconColor} />,
     activeIcon: <RiSurveyFill size={18} color={activeIconColor} />,
+    parentSlug: ["view-survey-details"],
     to: `view-surveys`,
   },
 ];

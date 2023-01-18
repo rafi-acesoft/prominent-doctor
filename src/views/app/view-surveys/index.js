@@ -116,7 +116,7 @@ const ViewSurveys = () => {
           <table className="table-container category-table">
             <thead>
               <tr>
-                <th>SL NO</th>
+                <th>SL No</th>
                 <th>SURVEY NAME</th>
                 <th>CATEGORY</th>
                 <th>Details</th>

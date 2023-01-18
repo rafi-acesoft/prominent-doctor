@@ -1,8 +1,6 @@
-import React, { Suspense } from "react";
-import { withRouter } from "react-router-dom";
+import React, { Suspense, useCallback, useEffect } from "react";
+import { useHistory, withRouter } from "react-router-dom";
 import { Route, Switch, Redirect, useRouteMatch } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import AppLayout from "../../layout/AppLayout";
 
 const ViewSurgeonsPage = React.lazy(() => import("./view-surgeons/index"));
@@ -20,20 +18,18 @@ const ViewUnauthorized = React.lazy(() => import("../unauthorized"));
 
 const App = () => {
   let match = useRouteMatch();
-  const location = useLocation();
-  const [currentPath, setCurrentPath] = useState(location.pathname);
+  const history = useHistory();
 
-  // useEffect(() => {
-  //   function handleLocationChange() {
-  //     setCurrentPath(location.pathname);
-  //   }
+  const handleBackButton = useCallback(() => {
+    history.goBack();
+  }, [history]);
 
-  //   window.addEventListener('popstate', handleLocationChange);
-
-  //   return () => {
-  //     window.removeEventListener('popstate', handleLocationChange);
-  //   };
-  // }, [location.pathname]);
+  useEffect(() => {
+    window.addEventListener('popstate', handleBackButton);
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, [handleBackButton]);
 
   return (
     <AppLayout>
